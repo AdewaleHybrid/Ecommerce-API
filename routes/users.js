@@ -121,7 +121,7 @@ router.post("/login", async (req, res) => {
   }
   // LOGIN USER
   if (user && bcrypt.compareSync(req.body.password, user.password)) {
-    const secret = process.env.secret;
+    const secret = process.env.JWT_KEY;
     const token = jwt.sign({ userId: user.id, isAdmin: user.isAdmin }, secret, { expiresIn: "1d" });
     return res.status(200).send({ user: user.email, isAdmin: user.isAdmin, token: token });
   } else {

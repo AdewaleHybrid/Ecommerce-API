@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose"); // for database
 
 //  PRODUCT SCHEMA- BLUE PRINT OF PRODUCT DATA
@@ -68,5 +67,5 @@ productSchema.virtual("id").get(function () {
 });
 productSchema.set("toJSON", { virtuals: true });
 
-// PRODUCT MODEL 
+// PRODUCT MODEL
 exports.Product = mongoose.model("Product", productSchema);

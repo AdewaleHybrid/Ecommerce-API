@@ -1,6 +1,6 @@
 const express = require("express"); // EXPRESS
 const app = express(); // EXPRESS
-const port = 3000; // PORT
+const port = 2000; // PORT
 const cors = require("cors"); // CORS
 const morgan = require("morgan"); // LOGGER
 const mongoose = require("mongoose"); // DATABASE
@@ -10,7 +10,7 @@ const userRouter = require("./routes/users"); // USER ROUTE
 const productRouter = require("./routes/products"); // PRODUCT ROUTE
 const categoryRouter = require("./routes/categories"); // CATEGORY ROUTE
 const orderRouter = require("./routes/orders"); // ORDER ROUTE
-const authJwt = require("./helpers/jwt"); // JWT AUTH
+// const authJwt = require("./helpers/jwt"); // JWT AUTH
 const errorHandler = require("./helpers/error-handle"); // JWT ERROR HANDLER
 
 //  = = = = = = = = = = SELF-DEFINED MODULES ENDS = = = = = = = = =
@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 // = = REQUEST LOGGER = =
 app.use(morgan("tiny"));
 // = = IMPORT EXPRESS-JWT FUNCTION = =
-app.use(authJwt());
+// app.use(authJwt());
 // = = ERROR HADLER FOR JWT = =
 app.use(errorHandler);
 // = = SET PULIC FOLDER = =
